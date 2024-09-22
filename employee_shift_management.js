@@ -9,3 +9,13 @@ let employees = [
  ]; // You need to click the array to see the data
 
  console.log(employees);
+
+ // Task 2. Create a Function to Display Employee Shift Details
+
+ function displayEmployeeShifts(employee) {
+for (let i = 0; i < employees.length; i++) {
+    const element = employees[i];
+    console.log(employee);
+};
+ };
+ displayEmployeeShifts(employees[0]);
