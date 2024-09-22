@@ -46,11 +46,11 @@ function calculateTotalHours(employeeName, employees) {
       if (element.employee === employeeName) {
         const employee = employees[i]; {
           for (let j = 0; j < employee.shifts.length; j++) {
-            totalHours += employee.shifts[j].hours;}
-    }return totalHours
-        }  
+            totalHours += employee.shifts[j].hours;}}
+        return totalHours  
     }   
         }
+    }
 let shift = [
 
     { employee: 'John', shifts: [{ day: 'Monday', hours: 8 }, { day: 'Wednesday', hours: 6 }] },
@@ -59,3 +59,25 @@ let shift = [
     { employee: 'Emily', shifts: [{ day: 'Friday', hours: 8 }] }]
 
 console.log(calculateTotalHours('John',shift));
+
+// Task 5. Create a Function to List Employees with Free Days
+
+function listAvailableEmployees(day, employees) {
+let listAvailableEmployees =[];
+for (let i = 0; i < employees.length; i++) {
+    let hasShift = false;
+    for (let j = 0; j < employees[i].shifts.length; j++) {
+        if(employees[i].shifts[j].day === day) {
+            hasShift = true;
+            break;
+        }
+        
+    }
+    if (!hasShift) {
+        listAvailableEmployees.push(employees[i].name);
+        }
+    }
+    console.log(`Available employees for ${day}: ${listAvailableEmployees.join(', ')}`);
+};
+
+listAvailableEmployees('Monday', employees);
