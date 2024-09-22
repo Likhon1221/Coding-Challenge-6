@@ -18,4 +18,21 @@ for (let i = 0; i < employees.length; i++) {
     console.log(employee);
 };
  };
- displayEmployeeShifts(employees[0]);
+ displayEmployeeShifts(employees[1]);
+
+ // Task 3. Create a Function to Assign a New Shift
+
+ function assignShift(employeeName, day, hours) {
+    let employee = employees.find((employee) => employee.name === employeeName);
+    if (!employee) {
+        console.log(`Employee unavaiable: ${employeeName}`);
+        
+      };
+      if (employee.shifts.some((shift) => shift.day === day)) {
+        console.log(`Employee unavaiable on ${day}`);
+        
+      }
+     else employee.shifts.push({ day, hours });
+      console.log(`Shift assigned to ${employeeName} on ${day} for ${hours} hours`);
+    };
+assignShift("John", "Tuesday", 5);
